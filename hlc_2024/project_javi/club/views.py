@@ -4,6 +4,8 @@ from django.template import loader
 from .models import Member, Court, Book
 from .forms import MemberForm, CourtForm , BookForm
 
+def welcome(request):
+    return render(request, 'welcome.html')
 
 def member_all(request):
     members = Member.objects.all()

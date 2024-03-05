@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center mb-4">New Book</h1>
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="id_member">Member</label>
+              {{ form.member }}
+              {% if form.errors.member %}
+              <div class="text-danger">{{ form.errors.member }}</div>
+              {% endif %}
+            </div>
+            <div class="form-group">
+              <label for="id_court">Court</label>
+              {{ form.court }}
+              {% if form.errors.court %}
+              <div class="text-danger">{{ form.errors.court }}</div>
+              {% endif %}
+            </div>
+            <div class="form-group">
+              <label for="id_date">Date</label>
+              {{ form.date }}
+              {% if form.errors.date %}
+              <div class="text-danger">{{ form.errors.date }}</div>
+              {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

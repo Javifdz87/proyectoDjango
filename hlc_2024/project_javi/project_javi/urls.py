@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('', include('club.urls')),
-    path('admin/', admin.site.urls),
+    path('', include('club.urls')),  # Ruta raíz que incluye las URLs de la aplicación 'club'
+    path('admin/', admin.site.urls),  # URL para el panel de administración de Django
 ]
+
